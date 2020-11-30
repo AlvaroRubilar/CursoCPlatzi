@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+struct PERSON
+{
+    char name[100];
+    int age;
+};
+void fillPersonData(struct PERSON *person, const char *name, int age)
+{
+    if (strlen(name) < 100)
+    {
+        strcpy((*person).name, name);
+    }
+    (*person).age = age;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -16,12 +29,11 @@ int main(int argc, char const *argv[])
         printf("Indique nombre y edad por favor\n");
         return 1;
     }
-    if (strlen(argv[1]) < 100)
-    {
-        strcpy(person.name, argv[1]);
-    }
+    
+    struct PERSON person;
 
-    person.age = atoi(argv[2]);
+    fillPersonData(&person,argv[1],atoi(argv[2]));
+    
     printf("Name = %s, age = %d\n", person.name, person.age);
 
     return 0;
