@@ -17,20 +17,15 @@ void fillPersonData(struct PERSON *person, const char *name, int age)
 
 int main(int argc, char const *argv[])
 {
-    struct
-    {
-        char name[100];
-        int age;
+    struct PERSON person;
 
-    } person;
-
-    if (argc < 1)
+    if (argc < 3)
     {
         printf("Indique nombre y edad por favor\n");
         return 1;
     }
     
-    struct PERSON person;
+    
 
     fillPersonData(&person,argv[1],atoi(argv[2]));
     
