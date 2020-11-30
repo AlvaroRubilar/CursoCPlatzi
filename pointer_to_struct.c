@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+typedef char NAME[100];
+typedef int AGE;
+
 struct PERSON
 {
-    char name[100];
-    int age;
+    NAME name;
+    AGE age;
 };
 void fillPersonData(struct PERSON *person, const char *name, int age)
 {
