@@ -10,9 +10,9 @@ void fillPersonData(struct PERSON *person, const char *name, int age)
 {
     if (strlen(name) < 100)
     {
-        strcpy((*person).name, name);
+        strcpy(person->name, name);
     }
-    (*person).age = age;
+    person->age = age;
 }
 
 int main(int argc, char const *argv[])
